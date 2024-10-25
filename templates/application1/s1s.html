@@ -1,0 +1,259 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="jumbotron">
+                    <h2 class="text text-center text-white bg-danger">Register here</h2>
+                        <hr>
+                        
+                    <form action="" onsubmit="return register()" method="post">
+                        {% csrf_token %}
+                        
+                            
+                        
+                        
+                                <label for="">username</label>
+                                <input type="text" placeholder="enter username" required name="username">  
+                            
+                            
+                                <label for="">email</label>
+                                <input type="email" placeholder="enter username" required name="email">  
+                          
+                                <label for="">phone_number</label>
+                                <input type="tel" placeholder="enter username" required name="phone_number">  
+                           
+                                <td><label for="">password</label>
+                                <td><input type="password" placeholder="enter username" required name="password">  
+                            
+                                <td><label for="">conform password</label>
+                                <td><input type="password" placeholder="enter username" required name="conform_password">  
+                           
+                            <input type="submit" value="register" onclick="submit()" class="btn btn-dark offset-md-5">
+                            <br>
+                            <br>
+                            <a href="{%url 'web2'%}" class="offset-md-5">Go To Mainpage</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function register()
+        {
+            var user_name=document.getElementById("C").value
+            
+            var email=document.getElementById("D").value
+            var obj4=email.match(/[A-Za-z0-9_.]*@gmail[.]com/g)
+            var password=document.getElementById("E").value
+            var obj5=password.match(/[A-Z]{1}[a-z]*\W{1}[0-9]{3}/g)
+            var c_password=document.getElementById("F").value
+            var obj6=c_password.match(/[A-Z]{1}[a-z]*\W{1}[0-9]{3}/g)
+            var phone_number=document.getElementById("D1").value
+       if (user_name==""||user_name==null)
+        {
+            document.getElementById("CC").innerHTML.style.red="***user_name required***"
+            return false
+        }
+       
+       if (email==""||email==null)
+        {
+            document.getElementById("DD").innerHTML="***email required***"
+            return false
+        }
+        else if(obj4==""||obj4==null)
+        {
+            document.getElementById("DD").innerHTML="***invalid email ex:Amruthaburidi321@gmail.com"
+            return false
+        }
+       if (password==""||password==null)
+        {
+            document.getElementById("EE").innerHTML="***password required***"
+            return false
+        }
+        else if(obj5==""||obj5==null)
+        {
+            document.getElementById("EE").innerHTML="*** invalid password ex:Ammu@123"
+            return false
+        }
+        if (c_password==""||c_password==null)
+        {
+            document.getElementById("FF").innerHTML="***c_password required***"
+            return false
+        }
+        else if(obj6==""||obj6==null)
+        {
+            document.getElementById("FF").innerHTML="*** invalid password ex:Ammu@123"
+            return false
+        }
+        if (phone_number==""||phone_number==null)
+        {
+            document.getElementById("DD1").innerHTML="**mobile number is required"
+        }
+        }
+        function submit()
+        {
+            window.alert("user registered successfully")
+        }
+        
+
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>regisetr here</h1>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table border="3">
+            <tr>
+                <td><label for="">username</label></td>
+                <td><input type="text" placeholder="enter username" required name="username">  </td>
+            </tr>
+            <tr>
+                <td><label for="">email</label></td>
+                <td><input type="email" placeholder="enter username" required name="email">  </td>
+            </tr>
+            <tr>
+                <td><label for="">phone_number</label></td>
+                <td><input type="email" placeholder="enter username" required name="phone_number">  </td>
+            </tr>
+            <tr>
+                <td><label for="">password</label></td>
+                <td><input type="password" placeholder="enter username" required name="password">  </td>
+            </tr>
+            <tr>
+                <td><label for="">conform password</label></td>
+                <td><input type="password" placeholder="enter username" required name="conform_password">  </td>
+            </tr>
+        </table>
+        <input type="submit" value="register">
+        
+    </form>
+    <a href="{%url 'web2'%}">Go to main</a>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!doctype html>
+<html>
+    <head>
+        <style>
+            div{
+                background-color:pink;
+                text-align:center;
+                margin:10px;
+                height:100%;
+                width:70%;
+                margin-left:13%;
+                padding:10px;
+                border-width: 10px;
+                border:4px solid black;
+
+            }
+            button{
+                background-color:red;
+                color:white;
+                padding:10px;
+                text-align:center;
+                height:5%;
+                width:30%;
+                border-radius:10px;
+
+            }
+        </style>
+        <title>this is the login website</title>
+    </head>
+    <body>
+        <div>
+        <h1>registration form</h1>
+        <h3>please fill the form to create an account</h3>
+        <hr>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="">username:</label>
+            <input type="text" id="lname" name="username" required autocomplete="off" placeholder="enter your name"><br>
+            <br>
+            <label for="">email:</label>
+            <input type="text" id="lname" name="email" required autocomplete="off" placeholder="enter your email_id"><br>
+            <br>
+            <label for="">phone_number:</label>
+            <input type="text" id="lname" name="phone_number" required autocomplete="off" placeholder="enter your phone_number"><br>
+            <br>
+            <label for="">Password:</label>
+            <input type="password" id="lname"  name="password" required autocomplete="off" placeholder="enter your password"><br>
+            <br>
+            
+            <label for="">conform_password:</label>
+            <input type="password" id="re-password" name="conform_password" required autocomplete="off" placeholder="enter your password again"><br>
+            <br>
+           
+            
+            <hr>
+            <h3>By creating an account you agree to our<span style="color:blue; text-decoration:underline;">Terms & Privacy.</span></h2>
+                <input type="submit" value="register">
+            <!-- <input type="reset" name="Reset"> -->
+            <h3>Already have an account?<span style="color:blue; text-decoration:underline;">sign-in</span> </h3> 
+            </label>
+        </form>
+        <a href="{%url 'web2'%}">Go to main</a>
+    </div>
+
+
+    <script>
+        function submit()
+        {
+            window.alert("successfully")
+        }
+    </script>
+
+
+
+
+
+
+
+    </body>
+</html>

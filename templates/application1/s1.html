@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="jumbotron">
+                    <h2 class="text text-center text-white bg-danger">Register here</h2>
+                        <hr>
+                    <form action=""  method="post" onsubmit="return register()">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>  </span>
+                                <input type="text" placeholder="username"  id="C" required autocomplete="off" name="username" class="form-control">
+                                <span id="CC"></span>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>  </span>
+                                <input type="text" placeholder="email"  id="D"   required autocomplete="off" name="email" class="form-control">
+                                <span id="DD"></span>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i>  </span>
+                                <input type="tel" placeholder="phone_number"  id="D1" required autocomplete="off" name="phone_number" class="form-control">
+                                <span id="DD1"></span>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-eye-close"></i>  </span>
+                                <input type="password" placeholder="password"  id="E" required autocomplete="off" name="password" class="form-control">
+                                <span id="EE"></span>
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-eye-close"></i>  </span>
+                                <input type="password" placeholder="conform_password"  id="F" required autocomplete="off" name="conform_password" class="form-control">
+                                <span id="FF"></span>
+                            </div>
+                    
+                            <hr>
+                            <br>
+                            <input type="submit" value="register" class="btn btn-dark offset-md-5">
+                            <br>
+                            <br>
+                            <a href="{%url 'web2'%}" class="offset-md-5">Go To Mainpage</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function register()
+        {
+            var user_name=document.getElementById("C").value
+            
+            var email=document.getElementById("D").value
+            var obj4=email.match(/[A-Za-z0-9_.]*@gmail[.]com/g)
+            var password=document.getElementById("E").value
+            var obj5=password.match(/[A-Z]{1}[a-z]*\W{1}[0-9]{3}/g)
+            var c_password=document.getElementById("F").value
+            var obj6=c_password.match(/[A-Z]{1}[a-z]*\W{1}[0-9]{3}/g)
+            var phone_number=document.getElementById("D1").value
+       if (user_name==""||user_name==null)
+        {
+            document.getElementById("CC").innerHTML.style.red="***user_name required***"
+            return false
+        }
+       
+       if (email==""||email==null)
+        {
+            document.getElementById("DD").innerHTML="***email required***"
+            return false
+        }
+        else if(obj4==""||obj4==null)
+        {
+            document.getElementById("DD").innerHTML="***invalid email ex:amruthaburidi321@gmail.com"
+            return false
+        }
+       if (password==""||password==null)
+        {
+            document.getElementById("EE").innerHTML="***password required***"
+            return false
+        }
+        else if(obj5==""||obj5==null)
+        {
+            document.getElementById("EE").innerHTML="*** invalid password ex:Ammu@123"
+            return false
+        }
+        if (c_password==""||c_password==null)
+        {
+            document.getElementById("FF").innerHTML="***c_password required***"
+            return false
+        }
+        else if(obj6==""||obj6==null)
+        {
+            document.getElementById("FF").innerHTML="*** invalid password ex:Ammu@123"
+            return false
+        }
+        if (phone_number==""||phone_number==null)
+        {
+            document.getElementById("DD1").innerHTML="**mobile number is required"
+        }
+        }
+        function submit()
+        {
+            window.alert("user registered successfully")
+        }
+        
+
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
